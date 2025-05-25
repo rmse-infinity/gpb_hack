@@ -10,14 +10,9 @@ LLM_MODEL_NAME = os.environ.get("LLM_MODEL_NAME", "leon-se/gemma-3-27b-it-FP8-Dy
 
 # Доступные позиции и вердикт
 AVAILABLE_POSITIONS = ["Data Scientist", "Data Engineer", "Data Analyst", "MLOps Engineer", "Project Manager"]
-INCOMPETENT_VERDICT = "[Некомпетентный соискатель]"
+INCOMPETENT_VERDICT = "Некомпетентный соискатель"
 MAX_MESSAGES_PER_SIDE = 10 # По 10 сообщений от кандидата
 
 # Логирование
 LOG_LEVEL = os.environ.get("LOG_LEVEL", "INFO").upper()
 
-# Проверка обязательных переменных
-if not BOT_TOKEN:
-    raise ValueError("BOT_TOKEN не найден в переменных окружения!")
-if not VLLM_API_BASE:
-    raise ValueError("VLLM_API_BASE не найден в переменных окружения!")
